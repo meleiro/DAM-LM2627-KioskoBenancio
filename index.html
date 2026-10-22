@@ -1,0 +1,1491 @@
+
+<!DOCTYPE html>
+
+<!--
+    ==========================================================
+    PROYECTO: KIOSKO BENANCIO
+    ==========================================================
+
+    En este proyecto estamos trabajando con HTML5.
+
+    El objetivo es construir una página web utilizando
+    etiquetas semánticas, es decir, etiquetas que aportan
+    información sobre el significado del contenido.
+
+    Las principales etiquetas semánticas que utilizaremos son:
+
+    - header: cabecera de la página.
+    - nav: zona de navegación.
+    - main: contenido principal.
+    - section: agrupación temática.
+    - article: contenido independiente.
+    - aside: información complementaria.
+    - figure: contenido ilustrativo.
+    - figcaption: leyenda de una figura.
+
+    También estudiaremos:
+
+    - Encabezados h1, h2 y h3.
+    - Párrafos.
+    - Listas.
+    - Enlaces internos.
+    - Imágenes y textos alternativos.
+    - Atributos de accesibilidad.
+
+    IMPORTANTE:
+
+    HTML define la estructura y el significado
+    de los contenidos.
+
+    CSS permitirá modificar posteriormente su apariencia.
+
+    JavaScript permitirá añadir comportamientos.
+
+    En este proyecto solo utilizamos HTML.
+    ==========================================================
+-->
+
+<!--
+    DOCTYPE:
+
+    Indica al navegador que el documento utiliza HTML moderno.
+
+    Esta declaración permite que el navegador interprete
+    la página utilizando el modo estándar.
+
+    No es una etiqueta HTML convencional.
+
+    Se escribe al principio del documento.
+-->
+
+<html lang="es">
+
+<!--
+    HTML:
+
+    Es el elemento raíz del documento.
+
+    Dentro de él se encuentran las dos grandes partes:
+
+    1. head: información técnica y metadatos.
+    2. body: contenido de la página.
+
+    ATRIBUTO lang:
+
+    lang="es" indica que el idioma principal es español.
+
+    Este atributo es importante para la accesibilidad.
+
+    Los lectores de pantalla pueden utilizarlo para
+    seleccionar una pronunciación adecuada al idioma.
+
+    También ayuda a otras herramientas a identificar
+    el idioma del documento.
+
+    Por ejemplo:
+
+    lang="en" -> inglés.
+    lang="fr" -> francés.
+    lang="es" -> español.
+
+    Como nuestra página está escrita en español,
+    utilizamos lang="es".
+-->
+
+<head>
+
+    <!--
+        HEAD:
+
+        Contiene información técnica sobre el documento.
+
+        Normalmente, esta información no se muestra
+        directamente en el contenido visible de la página.
+
+        Aquí incluimos:
+
+        - Codificación de caracteres.
+        - Configuración del viewport.
+        - Título del documento.
+        - Descripción para buscadores.
+
+        No debemos confundir head con header.
+
+        HEAD:
+        Información técnica del documento.
+
+        HEADER:
+        Cabecera semántica del contenido de la página.
+    -->
+
+
+    <meta charset="UTF-8">
+
+    <!--
+        META CHARSET:
+
+        La etiqueta meta permite proporcionar metadatos.
+
+        En este caso utilizamos el atributo charset.
+
+        charset="UTF-8" indica la codificación
+        de caracteres del documento.
+
+        UTF-8 permite representar correctamente:
+
+        - Letras con tilde.
+        - La letra ñ.
+        - Símbolos como €.
+        - Caracteres de múltiples idiomas.
+
+        Si la codificación no es correcta, pueden
+        aparecer caracteres extraños.
+
+        META es un elemento vacío.
+
+        Esto significa que no necesita etiqueta de cierre.
+    -->
+
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!--
+        META VIEWPORT:
+
+        Proporciona instrucciones al navegador sobre
+        el área de visualización de la página.
+
+        Es especialmente importante en dispositivos móviles.
+
+        ATRIBUTO name:
+
+        name="viewport"
+
+        Indica que estamos configurando el viewport.
+
+        El viewport es el área disponible para representar
+        el contenido de la página.
+
+        ATRIBUTO content:
+
+        Contiene los valores de configuración.
+
+        width=device-width:
+
+        Solicita que la anchura del viewport coincida
+        con la anchura del dispositivo.
+
+        initial-scale=1.0:
+
+        Establece la escala inicial de visualización.
+
+        IMPORTANTE:
+
+        Esta etiqueta no hace que nuestra página
+        sea automáticamente responsive.
+
+        Más adelante utilizaremos CSS para adaptar
+        la distribución de los elementos a diferentes
+        tamaños de pantalla.
+    -->
+
+
+    <title>
+        Kiosko Benancio | Prensa, golosinas y papelería
+    </title>
+
+    <!--
+        TITLE:
+
+        Define el título del documento HTML.
+
+        Habitualmente aparece en la pestaña del navegador.
+
+        También puede ser utilizado por los buscadores
+        para identificar el contenido de la página.
+
+        Es importante que sea descriptivo.
+
+        En nuestro caso contiene:
+
+        - El nombre del negocio.
+        - Los principales productos que ofrece.
+
+        DIFERENCIA ENTRE TITLE Y H1:
+
+        TITLE:
+        Identifica el documento en el navegador.
+
+        H1:
+        Es el encabezado principal del contenido.
+
+        Aunque pueden tener textos similares,
+        no cumplen exactamente la misma función.
+    -->
+
+
+    <meta name="description"
+          content="Conoce nuestro Kiosko: prensa, las mejores gominolas...">
+
+    <!--
+        META DESCRIPTION:
+
+        Proporciona una descripción del documento.
+
+        ATRIBUTO name:
+
+        name="description"
+
+        Indica que este metadato es una descripción.
+
+        ATRIBUTO content:
+
+        Contiene el texto descriptivo.
+
+        Los buscadores pueden utilizar esta información
+        como fragmento descriptivo en sus resultados.
+
+        No significa que el texto vaya a aparecer
+        automáticamente dentro de la página.
+
+        Tampoco garantiza una mejor posición en Google.
+
+        Es recomendable que la descripción explique
+        de forma clara y concreta qué ofrece la página.
+    -->
+
+</head>
+
+
+<body>
+
+    <!--
+        ======================================================
+        BODY: CONTENIDO DE LA PÁGINA
+        ======================================================
+
+        Dentro de body colocamos los elementos
+        que forman el contenido del documento.
+
+        En este proyecto utilizaremos:
+
+        - Un enlace de accesibilidad.
+        - Una cabecera.
+        - Un menú de navegación.
+        - Un contenido principal.
+        - Secciones temáticas.
+        - Artículos.
+        - Imágenes.
+        - Un aviso complementario.
+
+        La estructura semántica permite que los
+        navegadores y las tecnologías de asistencia
+        interpreten mejor la organización del documento.
+        ======================================================
+    -->
+
+
+    <!--
+        ======================================================
+        ENLACE PARA SALTAR AL CONTENIDO PRINCIPAL
+        ======================================================
+
+        La etiqueta a representa un hipervínculo.
+
+        Permite navegar a:
+
+        - Otra página.
+        - Una dirección externa.
+        - Un archivo.
+        - Una zona concreta del mismo documento.
+
+        ATRIBUTO href:
+
+        href="#contenido-principal"
+
+        El símbolo # indica que el enlace apunta
+        a un elemento identificado dentro de esta página.
+
+        Más adelante encontraremos:
+
+        <main id="contenido-principal">
+
+        El navegador relacionará ambos valores.
+
+        ¿POR QUÉ ES IMPORTANTE PARA LA ACCESIBILIDAD?
+
+        Imaginemos una página con un menú que contiene
+        numerosos enlaces.
+
+        Una persona que utiliza el teclado tendría
+        que recorrerlos antes de llegar al contenido.
+
+        Este enlace permite saltar directamente
+        a la región principal.
+
+        Por eso lo colocamos al principio del body.
+
+        PRUEBA EN CLASE:
+
+        1. Abrir la página en Edge.
+        2. Pulsar Tab.
+        3. Comprobar que se selecciona este enlace.
+        4. Pulsar Enter.
+        5. Observar el salto al contenido principal.
+
+        Sin CSS, el enlace aparece visible
+        como un enlace normal del navegador.
+        ======================================================
+    -->
+
+    <a href="#contenido-principal">
+        Saltar al contenido principal
+    </a>
+
+
+    <!--
+        ======================================================
+        HEADER: CABECERA SEMÁNTICA
+        ======================================================
+
+        HEADER es una etiqueta semántica de HTML5.
+
+        Representa contenido introductorio.
+
+        En nuestro caso contiene:
+
+        1. El nombre del negocio.
+        2. Una descripción breve.
+        3. El menú de navegación.
+
+        ¿POR QUÉ UTILIZAMOS HEADER?
+
+        Porque estamos indicando el significado
+        de esta región del documento.
+
+        Antes de HTML5 era habitual utilizar:
+
+        <div id="cabecera">
+
+        Sin embargo, div no aporta por sí mismo
+        información semántica sobre su contenido.
+
+        HEADER comunica que esta región actúa
+        como cabecera.
+
+        ACCESIBILIDAD:
+
+        Un header de nivel de página puede identificarse
+        como una región de tipo banner.
+
+        Los lectores de pantalla pueden permitir
+        desplazarse directamente a esta región.
+
+        IMPORTANTE:
+
+        HEADER no significa simplemente que un elemento
+        esté situado visualmente en la parte superior.
+
+        Su significado es introductorio.
+
+        También podemos encontrar HEADER dentro
+        de un ARTICLE o de una SECTION.
+
+        ATRIBUTO id:
+
+        id="inicio"
+
+        Asigna un identificador único a este elemento.
+
+        Los identificadores permiten localizar
+        elementos concretos dentro del documento.
+
+        Por ejemplo, podríamos crear un enlace:
+
+        <a href="#inicio">Volver al inicio</a>
+
+        El navegador buscaría el elemento
+        cuyo id fuera "inicio".
+
+        Cada id debe ser único dentro de la página.
+        ======================================================
+    -->
+
+    <header id="inicio">
+
+
+        <!--
+            H1: ENCABEZADO PRINCIPAL
+
+            H1 representa un encabezado de nivel 1.
+
+            HTML dispone de seis niveles:
+
+            h1, h2, h3, h4, h5 y h6.
+
+            Estos niveles permiten organizar
+            jerárquicamente el contenido.
+
+            En nuestro proyecto:
+
+            H1:
+            Nombre principal del negocio.
+
+            H2:
+            Secciones principales de la página.
+
+            H3:
+            Categorías dentro de una sección.
+
+            IMPORTANTE:
+
+            Los encabezados no deben utilizarse
+            simplemente para cambiar el tamaño del texto.
+
+            Su función es indicar la estructura.
+
+            ACCESIBILIDAD:
+
+            Los lectores de pantalla permiten
+            recorrer los encabezados.
+
+            Con Narrador, en modo de exploración,
+            podemos utilizar H para avanzar entre ellos.
+
+            También podemos utilizar 1 para buscar
+            encabezados de nivel 1.
+        -->
+
+        <h1>Kiosko Benancio</h1>
+
+
+        <!--
+            P: PÁRRAFO
+
+            Representa un párrafo de texto.
+
+            En este caso contiene una descripción
+            breve del negocio.
+
+            Los navegadores suelen mostrar
+            los párrafos separados mediante márgenes.
+
+            Sin embargo, esa apariencia visual
+            no es su función semántica.
+
+            No debemos utilizar p únicamente
+            para crear espacios entre elementos.
+        -->
+
+        <p>Tu kiosko de confianza</p>
+
+
+        <!--
+            ==================================================
+            NAV: REGIÓN DE NAVEGACIÓN
+            ==================================================
+
+            NAV representa una zona destinada a contener
+            enlaces importantes de navegación.
+
+            En este proyecto contiene el menú principal.
+
+            ¿QUÉ APORTA LA ETIQUETA NAV?
+
+            Permite identificar esta región como navegación.
+
+            Los lectores de pantalla pueden reconocerla
+            y facilitar el desplazamiento hasta ella.
+
+            Esto es más descriptivo que utilizar
+            un div genérico.
+
+            ATRIBUTO aria-label:
+
+            aria-label="Navegación principal"
+
+            ARIA significa:
+
+            Accessible Rich Internet Applications.
+
+            Este atributo proporciona un nombre accesible
+            directamente a la región de navegación.
+
+            El lector de pantalla puede identificarla
+            como "Navegación principal".
+
+            ¿POR QUÉ ES ÚTIL?
+
+            Una página puede tener varias zonas NAV.
+
+            Por ejemplo:
+
+            - Navegación principal.
+            - Navegación secundaria.
+            - Navegación del pie de página.
+
+            Mediante aria-label podemos diferenciarlas.
+
+            IMPORTANTE:
+
+            NAV ya proporciona semántica de navegación.
+
+            No es necesario añadir role="navigation".
+
+            Debemos utilizar primero las etiquetas
+            HTML nativas y recurrir a ARIA cuando
+            necesitemos información adicional.
+            ==================================================
+        -->
+
+        <nav aria-label="Navegación principal">
+
+
+            <!--
+                UL: LISTA NO ORDENADA
+
+                UL significa unordered list.
+
+                Representa una lista cuyos elementos
+                no necesitan un orden numérico.
+
+                En este caso agrupa los enlaces del menú.
+
+                ¿POR QUÉ UTILIZAMOS UNA LISTA?
+
+                Porque el menú es una colección
+                de opciones relacionadas.
+
+                Los lectores de pantalla pueden
+                identificar la lista y sus elementos.
+
+                LI:
+
+                Cada etiqueta li representa
+                un elemento de la lista.
+
+                A:
+
+                Dentro de cada li colocamos
+                un enlace de navegación.
+
+                Los enlaces utilizan href con #,
+                por lo que apuntan a secciones
+                de este mismo documento.
+            -->
+
+            <ul>
+
+                <!--
+                    href="#quienes-somos"
+
+                    Apunta al elemento que tenga:
+
+                    id="quienes-somos"
+
+                    Cuando pulsemos el enlace,
+                    el navegador localizará esa sección.
+                -->
+
+                <li>
+                    <a href="#quienes-somos">
+                        Quiénes somos
+                    </a>
+                </li>
+
+
+                <!--
+                    Este enlace apunta a la sección
+                    identificada mediante id="productos".
+                -->
+
+                <li>
+                    <a href="#productos">
+                        Productos
+                    </a>
+                </li>
+
+
+                <!--
+                    Este enlace apunta a la sección
+                    identificada mediante id="horarios".
+
+                    En este archivo todavía no existe
+                    esa sección.
+
+                    Por tanto, el enlace no encontrará
+                    actualmente su destino.
+
+                    Más adelante podremos incorporar
+                    la sección de horarios.
+                -->
+
+                <li>
+                    <a href="#horarios">
+                        Horarios
+                    </a>
+                </li>
+
+
+                <!--
+                    Este enlace apunta a id="contacto".
+
+                    En la versión actual todavía no
+                    hemos creado esa sección.
+
+                    El enlace queda preparado para
+                    continuar desarrollando la página.
+                -->
+
+                <li>
+                    <a href="#contacto">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!--
+        ======================================================
+        MAIN: CONTENIDO PRINCIPAL
+        ======================================================
+
+        MAIN es una etiqueta semántica de HTML5.
+
+        Identifica el contenido principal del documento.
+
+        En nuestro proyecto contiene:
+
+        - Presentación del kiosko.
+        - Catálogo de productos.
+        - Información complementaria.
+
+        ¿QUÉ DIFERENCIA HAY ENTRE MAIN Y SECTION?
+
+        MAIN:
+        Identifica el contenido principal de la página.
+
+        SECTION:
+        Agrupa contenido relacionado con un tema.
+
+        En una página normal tendremos un único
+        MAIN visible que represente el contenido principal.
+
+        ACCESIBILIDAD:
+
+        MAIN se identifica como región principal.
+
+        Los lectores de pantalla pueden ofrecer
+        mecanismos para acceder directamente a ella.
+
+        ATRIBUTO id:
+
+        id="contenido-principal"
+
+        Es el destino del enlace situado
+        al principio del body.
+
+        Esto permite saltar la navegación repetitiva
+        y acceder directamente al contenido.
+        ======================================================
+    -->
+
+    <main id="contenido-principal">
+
+
+        <!--
+            ==================================================
+            SECTION: QUIÉNES SOMOS
+            ==================================================
+
+            SECTION representa una agrupación temática.
+
+            Se utiliza cuando varios elementos
+            forman parte de un mismo tema.
+
+            En este caso agrupamos:
+
+            - El título "Quiénes somos".
+            - Un párrafo de presentación.
+            - Una imagen del kiosko.
+            - Una leyenda de la imagen.
+
+            ¿CUÁNDO UTILIZAR SECTION?
+
+            Cuando el contenido constituye
+            una sección identificable del documento.
+
+            Habitualmente tendrá un encabezado.
+
+            No debemos utilizar SECTION para agrupar
+            elementos sin ningún significado temático.
+
+            Para agrupaciones genéricas existe DIV.
+
+            ATRIBUTO id:
+
+            id="quienes-somos"
+
+            Permite acceder desde el enlace:
+
+            href="#quienes-somos"
+
+            ACCESIBILIDAD:
+
+            El encabezado H2 permite identificar
+            el tema de esta sección.
+
+            Una SECTION no se convierte necesariamente
+            en una región de referencia solo por existir.
+
+            Si queremos proporcionarle un nombre
+            accesible explícito, podemos relacionarla
+            con su encabezado mediante aria-labelledby.
+
+            En esta versión estamos utilizando
+            la estructura semántica básica.
+            ==================================================
+        -->
+
+        <section id="quienes-somos">
+
+
+            <!--
+                H2: ENCABEZADO DE NIVEL 2
+
+                Identifica una sección principal.
+
+                Se encuentra jerárquicamente
+                por debajo del H1 del documento.
+
+                Nuestra jerarquía comienza así:
+
+                H1 Kiosko Benancio
+
+                    H2 Quiénes somos
+
+                    H2 Nuestros productos
+
+                Esta organización permite
+                comprender la estructura de la página.
+            -->
+
+            <h2>Quiénes somos</h2>
+
+
+            <!--
+                STRONG: IMPORTANCIA SEMÁNTICA
+
+                STRONG indica que un fragmento
+                tiene especial importancia.
+
+                Los navegadores suelen mostrar
+                su contenido en negrita.
+
+                Pero su función no es únicamente
+                modificar el aspecto visual.
+
+                En este ejemplo destacamos
+                el nombre del negocio.
+
+                No debemos confundir STRONG con B.
+
+                STRONG comunica importancia.
+
+                B destaca visualmente un fragmento
+                sin expresar necesariamente importancia.
+
+                Los lectores de pantalla pueden
+                tratar este énfasis de manera diferente
+                según su configuración.
+            -->
+
+            <p>
+                En <strong>Kiosko Benancio</strong>
+                encontrarás todo lo que necesitas
+            </p>
+
+
+            <!--
+                =================================================
+                FIGURE: CONTENIDO ILUSTRATIVO
+                =================================================
+
+                FIGURE es una etiqueta semántica.
+
+                Representa una unidad de contenido
+                ilustrativo o autónomo.
+
+                Puede contener:
+
+                - Fotografías.
+                - Ilustraciones.
+                - Diagramas.
+                - Gráficos.
+                - Fragmentos de código.
+
+                En nuestro proyecto contiene
+                una imagen del kiosko y su leyenda.
+
+                FIGURE establece que ambos elementos
+                forman parte de una misma unidad.
+
+                No todas las imágenes necesitan
+                estar dentro de FIGURE.
+
+                Se utiliza cuando tiene sentido
+                presentar una figura con su contexto.
+                =================================================
+            -->
+
+            <figure>
+
+
+                <!--
+                    IMG: IMAGEN
+
+                    La etiqueta img incorpora
+                    una imagen al documento.
+
+                    Es un elemento vacío.
+
+                    No necesita etiqueta de cierre.
+
+                    ATRIBUTO src:
+
+                    src="images/kiosko.jpg"
+
+                    Indica dónde se encuentra la imagen.
+
+                    En este caso utilizamos
+                    una ruta relativa.
+
+                    El navegador buscará:
+
+                    1. La carpeta images.
+                    2. Dentro de ella, kiosko.jpg.
+
+                    La ruta se interpreta tomando
+                    como referencia la ubicación
+                    del archivo HTML.
+
+                    ATRIBUTO width:
+
+                    width="220"
+
+                    Establece una anchura declarada
+                    de 220 píxeles CSS.
+
+                    Como no indicamos height,
+                    el navegador normalmente conservará
+                    la proporción natural de la imagen.
+
+                    ATRIBUTO alt:
+
+                    alt="Ilustración de nuestro kiosko"
+
+                    Proporciona una alternativa textual
+                    a la imagen.
+
+                    Es importante para personas
+                    que utilizan lectores de pantalla.
+
+                    El texto alternativo debe transmitir
+                    la información relevante de la imagen.
+
+                    Si la imagen fuera decorativa,
+                    normalmente utilizaríamos alt="".
+
+                    PRUEBA:
+
+                    Activar Narrador y recorrer la imagen.
+
+                    Comprobar cómo se anuncia
+                    su alternativa textual.
+                -->
+
+                <img
+                    src="images/kiosko.jpg"
+                    width="220"
+                    alt="Ilustración de nuestro kiosko">
+
+
+                <!--
+                    FIGCAPTION: LEYENDA
+
+                    Proporciona una leyenda asociada
+                    al contenido de FIGURE.
+
+                    En nuestro caso identifica
+                    la imagen como la fachada del kiosko.
+
+                    DIFERENCIA ENTRE ALT Y FIGCAPTION:
+
+                    ALT:
+                    Alternativa textual de la imagen.
+
+                    FIGCAPTION:
+                    Leyenda de la figura.
+
+                    FIGCAPTION aparece como contenido
+                    visible en la página.
+
+                    ALT no se muestra normalmente
+                    como texto visible cuando la imagen
+                    se carga correctamente.
+
+                    Ambos pueden complementarse,
+                    pero debemos evitar repeticiones
+                    innecesarias.
+                -->
+
+                <figcaption>
+                    La fachada de nuestro kiosko
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+        <!--
+            ==================================================
+            SECTION: PRODUCTOS
+            ==================================================
+
+            Esta segunda SECTION agrupa las diferentes
+            categorías de productos del negocio.
+
+            ATRIBUTO id:
+
+            id="productos"
+
+            Permite acceder a esta sección
+            desde el menú de navegación.
+
+            Dentro utilizamos ARTICLE para representar
+            cada categoría como una unidad independiente.
+
+            DIFERENCIA ENTRE SECTION Y ARTICLE:
+
+            SECTION:
+            Agrupa contenido relacionado con un tema.
+
+            ARTICLE:
+            Representa contenido que puede comprenderse
+            como una unidad independiente.
+
+            Una SECTION puede contener varios ARTICLE.
+
+            Esta es precisamente la estructura
+            que estamos utilizando.
+            ==================================================
+        -->
+
+        <section id="productos">
+
+
+            <!--
+                H2:
+
+                Encabezado de nivel 2.
+
+                Identifica esta sección principal
+                dentro del documento.
+            -->
+
+            <h2>Nuestros productos</h2>
+
+
+            <!--
+                P:
+
+                Introduce el contenido
+                de la sección de productos.
+            -->
+
+            <p>Algunas de nuestras especialidades</p>
+
+
+            <!--
+                =================================================
+                ARTICLE: PRIMERA CATEGORÍA
+                =================================================
+
+                ARTICLE representa contenido autónomo.
+
+                Algunos ejemplos de ARTICLE son:
+
+                - Una noticia.
+                - Una publicación de blog.
+                - Una reseña.
+                - Una ficha independiente de producto.
+
+                Aquí representa una categoría del catálogo.
+
+                Cada ARTICLE contiene:
+
+                1. Un título.
+                2. Una imagen.
+                3. Una descripción.
+
+                Esta estructura se repetirá
+                para las otras categorías.
+
+                ACCESIBILIDAD:
+
+                ARTICLE aporta semántica propia.
+
+                Además, su encabezado H3 permite
+                navegar directamente a esta categoría.
+
+                IMPORTANTE:
+
+                ARTICLE no genera automáticamente
+                una tarjeta visual ni una columna.
+
+                Sin CSS, los elementos se muestran
+                siguiendo el flujo normal del documento.
+                =================================================
+            -->
+
+            <article>
+
+
+                <!--
+                    H3: ENCABEZADO DE NIVEL 3
+
+                    Identifica una categoría subordinada
+                    al H2 "Nuestros productos".
+
+                    La jerarquía queda así:
+
+                    H1 Kiosko Benancio
+
+                        H2 Nuestros productos
+
+                            H3 Prensa y revistas
+                            H3 Golosinas y bebidas
+                            H3 Material de papelería
+
+                    Esta jerarquía facilita
+                    la navegación por encabezados.
+                -->
+
+                <h3>Prensa y revistas</h3>
+
+
+                <!--
+                    IMG:
+
+                    Muestra la imagen de esta categoría.
+
+                    src:
+                    Ruta relativa del archivo.
+
+                    alt:
+                    Alternativa textual de la imagen.
+
+                    width:
+                    Anchura declarada en píxeles CSS.
+
+                    Es recomendable que el texto alternativo
+                    describa el contenido relevante,
+                    sin limitarse a decir "imagen de".
+
+                    En este caso, el ALT comunica
+                    que aparecen periódicos y revistas.
+                -->
+
+                <img
+                    src="images/periodicos.jpg"
+                    alt="Imagen de periódicos y revistas"
+                    width="200">
+
+
+                <!--
+                    P:
+
+                    Contiene la descripción
+                    de esta categoría.
+                -->
+
+                <p>
+                    Selección de periódicos y revistas
+                </p>
+
+            </article>
+
+
+            <!--
+                =================================================
+                SEGUNDO ARTICLE: GOLOSINAS Y BEBIDAS
+                =================================================
+
+                Repetimos la misma estructura semántica.
+
+                ARTICLE:
+                Unidad independiente.
+
+                H3:
+                Encabezado de la categoría.
+
+                IMG:
+                Imagen con alternativa textual.
+
+                P:
+                Descripción del contenido.
+
+                La repetición de una estructura coherente
+                facilita el mantenimiento del código.
+
+                También permite que los usuarios
+                encuentren información de forma predecible.
+                =================================================
+            -->
+
+            <article>
+
+                <h3>Golosinas y bebidas</h3>
+
+
+                <!--
+                    Esta imagen utiliza un archivo PNG.
+
+                    El formato PNG permite representar
+                    imágenes con transparencia.
+
+                    El atributo ALT debe describir
+                    la información que transmite
+                    la imagen en este contexto.
+
+                    Si realmente aparecen caramelos
+                    por el suelo, el texto alternativo
+                    debe reflejar esa circunstancia.
+
+                    Si cambiamos la imagen, debemos
+                    revisar también su descripción ALT.
+                -->
+
+                <img
+                    src="images/caramelos.png"
+                    alt="Imagen de caramelos por el suelo"
+                    width="200">
+
+                <p>
+                    Selección de golosinas y bebidas
+                </p>
+
+            </article>
+
+
+            <!--
+                =================================================
+                TERCER ARTICLE: PAPELERÍA
+                =================================================
+
+                Representa otra categoría independiente.
+
+                Utilizamos nuevamente:
+
+                - ARTICLE para el contenido autónomo.
+                - H3 para el encabezado.
+                - IMG para la imagen.
+                - P para la descripción.
+
+                De esta forma mantenemos una estructura
+                coherente en todo el catálogo.
+
+                PRUEBA CON NARRADOR:
+
+                Podemos utilizar la navegación rápida
+                por encabezados de nivel 3 para pasar
+                entre las tres categorías.
+                =================================================
+            -->
+
+            <article>
+
+                <h3>Material de papelería</h3>
+
+                <img
+                    src="images/cuadernos.png"
+                    alt="Imagen de material de papelería"
+                    width="200">
+
+                <p>
+                    Selección de material de papelería
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!--
+            ==================================================
+            ASIDE: INFORMACIÓN COMPLEMENTARIA
+            ==================================================
+
+            ASIDE es una etiqueta semántica de HTML5.
+
+            Representa contenido relacionado con
+            el contexto, pero complementario.
+
+            Algunos usos habituales son:
+
+            - Avisos.
+            - Recomendaciones.
+            - Información adicional.
+            - Contenido relacionado.
+            - Notas complementarias.
+
+            En este proyecto contiene un aviso
+            sobre el cierre del kiosko.
+
+            ¿POR QUÉ UTILIZAMOS ASIDE?
+
+            Porque esta información no forma parte
+            directamente de la descripción del negocio
+            ni del catálogo de productos.
+
+            Es información adicional relacionada
+            con la actividad del kiosko.
+
+            IMPORTANTE:
+
+            ASIDE no significa que el contenido
+            aparezca automáticamente a la derecha.
+
+            Su significado es semántico,
+            no visual.
+
+            CSS permitirá posteriormente colocarlo
+            en una columna lateral si lo deseamos.
+
+            ACCESIBILIDAD:
+
+            ASIDE suele exponerse como una región
+            complementaria ante los lectores de pantalla.
+
+            Esto permite localizarla mediante
+            la navegación por regiones.
+
+            ATRIBUTO id:
+
+            id="avisos"
+
+            Identifica de forma única este elemento.
+
+            Podríamos crear un enlace interno:
+
+            <a href="#avisos">Consultar avisos</a>
+
+            El navegador localizaría este ASIDE.
+
+            ENCABEZADO H2:
+
+            Identifica el contenido del aviso.
+
+            Si necesitáramos asignar explícitamente
+            un nombre accesible a la región,
+            podríamos utilizar aria-labelledby
+            relacionado con el identificador del H2.
+
+            PRUEBA CON NARRADOR:
+
+            Activar el modo de exploración.
+
+            Utilizar la navegación por regiones
+            para localizar el contenido complementario.
+            ==================================================
+        -->
+
+        <aside id="avisos">
+
+
+            <!--
+                H2:
+
+                Encabezado de nivel 2.
+
+                Identifica el tema de esta región.
+
+                No utilizamos H3 porque este aviso
+                no es una categoría de productos.
+
+                Es una región complementaria
+                con su propio encabezado.
+            -->
+
+            <h2>Avisos Importantes</h2>
+
+
+            <!--
+                P:
+
+                Contiene el mensaje informativo.
+
+                El texto indica que el negocio
+                permanecerá cerrado un día concreto.
+
+                ACCESIBILIDAD:
+
+                No dependemos únicamente de un color
+                o de un icono para comunicar el aviso.
+
+                La información aparece expresada
+                directamente mediante texto.
+
+                Esto permite comprenderla sin necesidad
+                de interpretar señales visuales.
+
+                En una página real convendría indicar
+                una fecha completa para evitar ambigüedades.
+            -->
+
+            <p>
+                Este sábado 24 permaneceremos cerrados
+            </p>
+
+        </aside>
+
+    </main>
+
+
+    <!--
+        ======================================================
+        CIERRE DEL CONTENIDO PRINCIPAL
+        ======================================================
+
+        Aquí termina MAIN.
+
+        Todo el contenido comprendido entre
+        <main> y </main> pertenece a la región
+        principal de la página.
+
+        En una versión posterior podríamos añadir:
+
+        - Una sección de horarios.
+        - Una sección de contacto.
+        - Un formulario.
+        - Un pie de página con FOOTER.
+
+        Recordemos que los enlaces del menú
+        hacia horarios y contacto todavía
+        no tienen una sección de destino.
+        ======================================================
+    -->
+
+</body>
+
+<!--
+    BODY termina aquí.
+
+    Hemos cerrado todas las etiquetas abiertas
+    dentro del contenido de la página.
+-->
+
+</html>
+
+<!--
+    ==========================================================
+    RESUMEN FINAL DEL PROYECTO
+    ==========================================================
+
+    ETIQUETAS SEMÁNTICAS UTILIZADAS:
+
+    HEADER:
+    Cabecera e introducción del sitio.
+
+    NAV:
+    Región con enlaces de navegación.
+
+    MAIN:
+    Contenido principal del documento.
+
+    SECTION:
+    Agrupación de contenido por temas.
+
+    ARTICLE:
+    Contenido autónomo o independiente.
+
+    ASIDE:
+    Información complementaria.
+
+    FIGURE:
+    Agrupación de contenido ilustrativo.
+
+    FIGCAPTION:
+    Leyenda asociada a una figura.
+
+    OTRAS ETIQUETAS IMPORTANTES:
+
+    H1, H2, H3:
+    Encabezados jerárquicos.
+
+    P:
+    Párrafos.
+
+    STRONG:
+    Importancia semántica.
+
+    UL:
+    Lista no ordenada.
+
+    LI:
+    Elemento de lista.
+
+    A:
+    Hipervínculo.
+
+    IMG:
+    Imagen.
+
+    ATRIBUTOS ESTUDIADOS:
+
+    lang:
+    Idioma principal del documento.
+
+    id:
+    Identificador único de un elemento.
+
+    href:
+    Destino de un enlace.
+
+    src:
+    Ruta de una imagen.
+
+    alt:
+    Alternativa textual de una imagen.
+
+    width:
+    Anchura declarada.
+
+    aria-label:
+    Nombre accesible proporcionado directamente.
+
+    CONCLUSIÓN:
+
+    HTML5 permite representar no solamente
+    el contenido, sino también su significado.
+
+    Una estructura semántica adecuada facilita:
+
+    - Comprender el código.
+    - Mantener la página.
+    - Identificar sus regiones.
+    - Navegar mediante encabezados.
+    - Utilizar tecnologías de asistencia.
+    - Desarrollar páginas más accesibles.
+
+    La semántica es una parte fundamental
+    de la calidad profesional del HTML.
+    ==========================================================
+-->

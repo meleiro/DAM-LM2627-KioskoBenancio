@@ -1356,7 +1356,1353 @@
 
         </aside>
 
-    </main>
+      
+<!--
+==========================================================
+1. SECTION: SECCIÓN DE HORARIOS
+==========================================================
+
+La etiqueta SECTION es una etiqueta semántica de HTML5.
+
+Su función es agrupar contenido relacionado
+con un mismo tema dentro del documento.
+
+En este caso, agrupamos toda la información
+correspondiente a los horarios del kiosko.
+
+¿Por qué utilizamos SECTION y no DIV?
+
+SECTION:
+    Representa una sección temática del documento.
+
+DIV:
+    Es un contenedor genérico que no aporta
+    significado semántico por sí mismo.
+
+En nuestro ejemplo, "Horarios" constituye
+un apartado claramente identificable,
+por lo que SECTION es apropiada.
+
+ATRIBUTO ID:
+
+id="horarios"
+
+Asigna un identificador único a la sección.
+
+Esto permite crear enlaces internos como:
+
+<a href="#horarios">Ir a horarios</a>
+
+Cuando el usuario pulse el enlace,
+el navegador buscará el elemento
+cuyo ID sea "horarios".
+
+ATRIBUTO ARIA-LABELLEDBY:
+
+aria-labelledby="titulo-horarios"
+
+Relaciona esta sección con otro elemento
+que proporciona su nombre accesible.
+
+En nuestro caso, ese elemento será:
+
+<h2 id="titulo-horarios">Horario de atención</h2>
+
+De esta forma, la sección puede identificarse
+en el árbol de accesibilidad como una región
+denominada "Horario de atención".
+
+IMPORTANTE:
+
+ARIA-LABELLEDBY no crea un enlace de navegación.
+
+Su finalidad es establecer una relación
+de accesibilidad entre elementos.
+
+PRUEBA:
+
+1. Abrir la página en Microsoft Edge.
+2. Pulsar F12.
+3. Seleccionar la etiqueta SECTION.
+4. Abrir la información de accesibilidad.
+5. Comprobar su nombre accesible.
+==========================================================
+-->
+
+<section id="horarios" aria-labelledby="titulo-horarios">
+
+
+    <!--
+    ======================================================
+    2. H2: ENCABEZADO DE LA SECCIÓN
+    ======================================================
+
+    H2 representa un encabezado de nivel 2.
+
+    En nuestra página:
+
+    H1:
+        Kiosko Benancio.
+
+    H2:
+        Quiénes somos.
+        Nuestros productos.
+        Horario de atención.
+        Contacto con nosotros.
+
+    H3:
+        Categorías de productos.
+
+    Los encabezados establecen una jerarquía
+    que ayuda a comprender el documento.
+
+    No debemos utilizar H2 simplemente
+    porque queremos un texto más grande.
+
+    Su función principal es semántica.
+
+    ATRIBUTO ID:
+
+    id="titulo-horarios"
+
+    Este identificador coincide con el valor
+    del ARIA-LABELLEDBY de la SECTION.
+
+    Esto permite utilizar el texto del H2
+    como nombre accesible de la sección.
+
+    PRUEBA CON NARRADOR:
+
+    Activar Narrador mediante:
+
+    Windows + Ctrl + Enter
+
+    En modo de exploración, utilizar H
+    para avanzar entre encabezados.
+
+    También podemos utilizar 2 para buscar
+    encabezados de nivel 2.
+    ======================================================
+    -->
+
+    <h2 id="titulo-horarios">
+        Horario de atención
+    </h2>
+
+
+    <!--
+    ======================================================
+    3. TABLE: TABLA DE DATOS
+    ======================================================
+
+    TABLE es una etiqueta semántica utilizada
+    para representar información tabular.
+
+    La información tabular es aquella
+    que establece relaciones entre filas
+    y columnas.
+
+    En nuestro caso relacionamos:
+
+    FILAS:
+        Días de apertura.
+
+    COLUMNAS:
+        Día.
+        Horario de mañana.
+        Horario de tarde.
+
+    ¿POR QUÉ UTILIZAMOS TABLE?
+
+    Porque existe una relación entre
+    cada día y sus franjas horarias.
+
+    No debemos utilizar TABLE simplemente
+    para distribuir elementos visualmente
+    en diferentes columnas.
+
+    Para diseñar distribuciones visuales
+    utilizaremos posteriormente CSS.
+
+    ATRIBUTO BORDER:
+
+    border="1"
+
+    Es un atributo antiguo de presentación
+    que permite solicitar un borde para la tabla.
+
+    Lo mantenemos para observar fácilmente
+    las filas y columnas durante la práctica.
+
+    Sin embargo, está obsoleto en HTML moderno
+    y se recomienda utilizar CSS.
+
+    Por ejemplo, más adelante podríamos usar:
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    En esta práctica seguimos trabajando
+    únicamente con HTML.
+
+    ACCESIBILIDAD:
+
+    Las tablas deben utilizar correctamente
+    las etiquetas TH y TD.
+
+    Esto permite que los lectores de pantalla
+    relacionen los datos con sus encabezados.
+    ======================================================
+    -->
+
+    <table border="1">
+
+
+        <!--
+        ==================================================
+        4. CAPTION: TÍTULO DE LA TABLA
+        ==================================================
+
+        CAPTION proporciona un título descriptivo
+        asociado semánticamente a la tabla.
+
+        En este caso:
+
+        "Horario habitual Kiosko Benancio"
+
+        IMPORTANTE:
+
+        CAPTION no es lo mismo que H2.
+
+        H2:
+            Identifica el apartado de horarios.
+
+        CAPTION:
+            Identifica específicamente la tabla.
+
+        Una sección podría contener varias tablas,
+        cada una con su propio CAPTION.
+
+        ACCESIBILIDAD:
+
+        Los lectores de pantalla pueden utilizar
+        CAPTION para identificar la tabla.
+
+        Esto facilita comprender qué datos contiene
+        antes de comenzar a recorrer sus celdas.
+
+        PRUEBA:
+
+        1. Activar Narrador.
+        2. Localizar la tabla.
+        3. Comprobar cómo se identifica su título.
+        ==================================================
+        -->
+
+        <caption>
+            Horario habitual Kiosko Benancio
+        </caption>
+
+
+        <!--
+        ==================================================
+        5. THEAD: CABECERA DE LA TABLA
+        ==================================================
+
+        THEAD agrupa las filas que forman
+        la cabecera de una tabla.
+
+        No representa una celda individual.
+
+        Dentro de THEAD colocamos TR,
+        que representa una fila.
+
+        Y dentro de TR colocamos TH,
+        que representa celdas de encabezado.
+
+        La estructura será:
+
+        TABLE
+            CAPTION
+            THEAD
+                TR
+                    TH
+                    TH
+                    TH
+            TBODY
+                TR
+                    TH
+                    TD
+                    TD
+
+        IMPORTANTE:
+
+        THEAD no es obligatorio para que exista
+        una tabla HTML válida.
+
+        Sin embargo, es recomendable utilizarlo
+        cuando tenemos una cabecera claramente
+        diferenciada del cuerpo de datos.
+        ==================================================
+        -->
+
+        <thead>
+
+
+            <!--
+            TR significa TABLE ROW.
+
+            Representa una fila de la tabla.
+
+            En este caso estamos creando
+            la primera fila, que contiene
+            los encabezados de las columnas.
+            -->
+
+            <tr>
+
+
+                <!--
+                ==========================================
+                6. TH: CELDA DE ENCABEZADO
+                ==========================================
+
+                TH significa TABLE HEADER.
+
+                Representa una celda de encabezado.
+
+                DIFERENCIA ENTRE TH Y TD:
+
+                TH:
+                    Identifica una fila o columna.
+
+                TD:
+                    Contiene un dato de la tabla.
+
+                ATRIBUTO SCOPE:
+
+                scope="col"
+
+                Indica que esta celda es
+                el encabezado de una columna.
+
+                En nuestro caso:
+
+                "Días" identifica la primera columna.
+
+                Los lectores de pantalla pueden
+                utilizar esta relación para anunciar
+                correctamente los datos.
+
+                IMPORTANTE:
+
+                SCOPE no modifica necesariamente
+                la apariencia visual de la tabla.
+
+                Su finalidad principal es establecer
+                relaciones entre encabezados y datos.
+                ==========================================
+                -->
+
+                <th scope="col">
+                    Días
+                </th>
+
+
+                <!--
+                Este TH identifica la columna
+                correspondiente al horario de mañana.
+
+                scope="col" indica que su encabezado
+                se aplica a los datos de esa columna.
+                -->
+
+                <th scope="col">
+                    Mañana
+                </th>
+
+
+                <!--
+                Este TH identifica la columna
+                correspondiente al horario de tarde.
+                -->
+
+                <th scope="col">
+                    Tarde
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <!--
+        ==================================================
+        7. TBODY: CUERPO DE LA TABLA
+        ==================================================
+
+        TBODY agrupa las filas que contienen
+        los datos principales de la tabla.
+
+        En nuestro ejemplo tendremos dos filas:
+
+        1. Lunes a viernes.
+        2. Sábados.
+
+        Cada fila utiliza TR.
+
+        La primera celda de cada fila
+        utiliza TH con scope="row".
+
+        Las demás utilizan TD.
+
+        Esto permite diferenciar claramente
+        los encabezados de fila de los datos.
+        ==================================================
+        -->
+
+        <tbody>
+
+
+            <!--
+            PRIMERA FILA DE DATOS
+
+            Representa el horario de lunes a viernes.
+            -->
+
+            <tr>
+
+
+                <!--
+                TH CON SCOPE="ROW"
+
+                Esta celda representa el encabezado
+                de la fila.
+
+                scope="row" significa que el encabezado
+                corresponde a los datos de esa fila.
+
+                En nuestro ejemplo:
+
+                Lunes a viernes
+                    Mañana: 9:00 a 14:00.
+                    Tarde: 17:00 a 20:00.
+
+                DIFERENCIA:
+
+                scope="col":
+                    Encabezado de columna.
+
+                scope="row":
+                    Encabezado de fila.
+
+                Esta distinción resulta especialmente
+                útil para tecnologías de asistencia.
+                -->
+
+                <th scope="row">
+                    Lunes a viernes
+                </th>
+
+
+                <!--
+                TD significa TABLE DATA.
+
+                Representa una celda de datos.
+
+                En este caso contiene
+                el horario de mañana.
+
+                Se relaciona con:
+
+                Encabezado de columna: Mañana.
+
+                Encabezado de fila: Lunes a viernes.
+                -->
+
+                <td>
+                    9:00 a 14:00
+                </td>
+
+
+                <!--
+                Segunda celda de datos de la fila.
+
+                Contiene el horario de tarde.
+                -->
+
+                <td>
+                    17:00 a 20:00
+                </td>
+
+            </tr>
+
+
+            <!--
+            SEGUNDA FILA DE DATOS
+
+            Representa el horario de los sábados.
+            -->
+
+            <tr>
+
+
+                <!--
+                Encabezado de la segunda fila.
+
+                Identifica los datos correspondientes
+                a los sábados.
+                -->
+
+                <th scope="row">
+                    Sábados
+                </th>
+
+
+                <!--
+                Horario de mañana de los sábados.
+                -->
+
+                <td>
+                    9:30 a 14:00
+                </td>
+
+
+                <!--
+                Horario de tarde de los sábados.
+
+                Aunque el contenido sea "CERRADO",
+                sigue siendo una celda de datos.
+
+                Por tanto, utilizamos TD.
+                -->
+
+                <td>
+                    CERRADO
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<!--
+==========================================================
+8. SMALL: INFORMACIÓN SECUNDARIA
+==========================================================
+
+SMALL representa comentarios accesorios
+o información secundaria.
+
+Es apropiado para:
+
+- Aclaraciones.
+- Avisos legales.
+- Condiciones.
+- Información complementaria.
+
+En este caso indicamos que los horarios
+son ficticios y tienen finalidad educativa.
+
+Los navegadores suelen mostrar SMALL
+con un tamaño de letra menor.
+
+Sin embargo, su significado no consiste
+simplemente en reducir el tamaño del texto.
+
+Para modificar tamaños visuales utilizaremos CSS.
+
+IMPORTANTE:
+
+Este párrafo se encuentra fuera de la SECTION
+de horarios, porque así estaba en el código original.
+
+Si queremos que la aclaración forme parte
+semánticamente de esa sección, sería más coherente
+colocarla antes de su etiqueta de cierre </section>.
+==========================================================
+-->
+
+<p>
+    <small>
+        Horario ficticio con fines de maquetación
+    </small>
+</p>
+
+
+<!--
+==========================================================
+9. SECTION: SECCIÓN DE CONTACTO
+==========================================================
+
+Creamos una nueva sección temática.
+
+Su contenido está dedicado al contacto
+con el negocio.
+
+ATRIBUTO ID:
+
+id="contacto"
+
+Permite crear enlaces internos:
+
+<a href="#contacto">Contacto</a>
+
+ATRIBUTO ARIA-LABELLEDBY:
+
+aria-labelledby="titulo-contacto"
+
+Relaciona esta sección con su encabezado H2.
+
+De esta forma, la región puede recibir
+el nombre accesible "Contacto con nosotros".
+==========================================================
+-->
+
+<section id="contacto" aria-labelledby="titulo-contacto">
+
+
+    <!--
+    H2:
+
+    Encabezado de nivel 2.
+
+    Identifica esta sección dentro de
+    la estructura del documento.
+
+    Su ID proporciona el nombre accesible
+    a la SECTION mediante ARIA-LABELLEDBY.
+    -->
+
+    <h2 id="titulo-contacto">
+        Contacto con nosotros
+    </h2>
+
+
+    <!--
+    P:
+
+    Representa un párrafo.
+
+    STRONG:
+
+    Indica que un fragmento tiene
+    especial importancia.
+
+    Los navegadores suelen mostrar
+    STRONG en negrita.
+
+    Sin embargo, su función es semántica,
+    no simplemente visual.
+
+    IMPORTANTE:
+
+    Este formulario no dispone de un backend
+    que procese o almacene la información.
+
+    Pero sí puede producir una navegación HTTP
+    y añadir los datos a la URL al utilizar GET.
+    -->
+
+    <p>
+        Rellena este formulario.
+        <strong>
+            De momento no se procesan ni almacenan
+            los datos en un servidor.
+        </strong>
+    </p>
+
+
+    <!--
+    ======================================================
+    10. FORM: FORMULARIO HTML
+    ======================================================
+
+    FORM representa un formulario.
+
+    Permite agrupar controles destinados
+    a recoger información del usuario.
+
+    Puede contener:
+
+    - INPUT.
+    - SELECT.
+    - TEXTAREA.
+    - BUTTON.
+    - FIELDSET.
+    - LABEL.
+
+    ATRIBUTO ACTION:
+
+    action="#contacto"
+
+    Indica el destino del envío del formulario.
+
+    En este caso se utiliza una referencia
+    a la misma página, con el fragmento #contacto.
+
+    ATRIBUTO METHOD:
+
+    method="get"
+
+    Indica que el navegador utilizará GET.
+
+    Con GET, los datos del formulario
+    se incorporan como parámetros a la URL.
+
+    Por ejemplo:
+
+    ?nombre=Ana&correo=ana%40ejemplo.com
+
+    IMPORTANTE:
+
+    GET no debe utilizarse para enviar
+    contraseñas o información sensible.
+
+    Los valores pueden quedar registrados
+    en historiales, servidores y otros sistemas.
+
+    DIFERENCIA ENTRE GET Y POST:
+
+    GET:
+        Incorpora los datos a la URL.
+
+    POST:
+        Envía los datos en el cuerpo
+        de la petición HTTP.
+
+    POST no implica automáticamente cifrado.
+    Para proteger la transmisión se necesita HTTPS.
+
+    En esta práctica utilizamos GET
+    para observar el comportamiento del navegador.
+
+    PRUEBA:
+
+    1. Rellenar el formulario.
+    2. Pulsar Enviar consulta.
+    3. Observar la barra de direcciones.
+    4. Identificar los parámetros enviados.
+    ======================================================
+    -->
+
+    <form action="#contacto" method="get">
+
+
+        <!--
+        ==================================================
+        11. FIELDSET: AGRUPACIÓN DE CONTROLES
+        ==================================================
+
+        FIELDSET agrupa controles relacionados
+        dentro de un formulario.
+
+        En este caso agrupamos:
+
+        - Nombre.
+        - Correo electrónico.
+
+        Esto permite identificar estos controles
+        como parte de un mismo conjunto.
+
+        ACCESIBILIDAD:
+
+        Los lectores de pantalla pueden utilizar
+        la información del grupo para proporcionar
+        contexto durante la navegación.
+
+        Los navegadores suelen representar FIELDSET
+        mediante un borde.
+
+        Sin embargo, su función principal
+        es agrupar controles semánticamente.
+        ==================================================
+        -->
+
+        <fieldset>
+
+
+            <!--
+            LEGEND:
+
+            Proporciona un título al FIELDSET.
+
+            En nuestro caso:
+
+            "Datos personales"
+
+            DIFERENCIA ENTRE LEGEND Y LABEL:
+
+            LEGEND:
+                Identifica un grupo de controles.
+
+            LABEL:
+                Identifica un control concreto.
+
+            Un FIELDSET puede contener
+            múltiples LABEL.
+            -->
+
+            <legend>
+                Datos personales
+            </legend>
+
+
+            <!--
+            ==================================================
+            12. LABEL E INPUT TYPE="TEXT"
+            ==================================================
+
+            LABEL:
+
+            Proporciona una etiqueta descriptiva
+            al control del formulario.
+
+            ATRIBUTO FOR:
+
+            for="nombre"
+
+            Relaciona este LABEL con el elemento
+            cuyo ID sea "nombre".
+
+            Esta relación es importante
+            para la accesibilidad.
+
+            También permite que, al pulsar
+            sobre el texto del LABEL,
+            se enfoque el INPUT correspondiente.
+
+            INPUT:
+
+            Representa un control de entrada.
+
+            TYPE="TEXT":
+
+            Permite introducir texto de una línea.
+
+            ID="nombre":
+
+            Identificador único del control.
+
+            NAME="nombre":
+
+            Nombre utilizado durante el envío.
+
+            Por ejemplo:
+
+            nombre=Ana
+
+            AUTOCOMPLETE="name":
+
+            Indica al navegador que el campo
+            corresponde al nombre de una persona.
+
+            El navegador puede ofrecer sugerencias
+            de autocompletado.
+
+            REQUIRED:
+
+            Indica que el campo es obligatorio.
+
+            MINLENGTH="2":
+
+            Establece una longitud mínima
+            de dos caracteres para la entrada.
+
+            PRUEBA:
+
+            1. Intentar enviar el campo vacío.
+            2. Introducir una sola letra.
+            3. Intentar enviar.
+            4. Introducir dos o más caracteres.
+            5. Comprobar la validación.
+
+            IMPORTANTE:
+
+            La validación HTML del navegador
+            no sustituye a la validación del servidor.
+            ==================================================
+            -->
+
+            <p>
+
+                <label for="nombre">
+                    Nombre (Obligatorio):
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    autocomplete="name"
+                    required
+                    minlength="2">
+
+            </p>
+
+
+            <!--
+            ==================================================
+            13. INPUT TYPE="EMAIL"
+            ==================================================
+
+            TYPE="EMAIL":
+
+            Indica que esperamos una dirección
+            de correo electrónico.
+
+            El navegador puede comprobar
+            que el texto introducido tenga
+            un formato de correo válido.
+
+            Por ejemplo:
+
+            ana@ejemplo.com
+
+            ATRIBUTOS:
+
+            ID="correo":
+                Identificador del control.
+
+            NAME="correo":
+                Nombre del dato enviado.
+
+            AUTOCOMPLETE="email":
+                Permite al navegador ofrecer
+                sugerencias de correo electrónico.
+
+            REQUIRED:
+                Campo obligatorio.
+
+            DIFERENCIA ENTRE TEXT Y EMAIL:
+
+            TEXT:
+                Entrada de texto genérica.
+
+            EMAIL:
+                Entrada especializada en direcciones
+                de correo electrónico.
+
+            IMPORTANTE:
+
+            TYPE="EMAIL" no garantiza que
+            la dirección realmente exista.
+
+            Solo permite una validación básica
+            del formato.
+
+            PRUEBA:
+
+            1. Escribir "hola".
+            2. Intentar enviar el formulario.
+            3. Observar el mensaje de validación.
+            4. Escribir "hola@ejemplo.com".
+            5. Comprobar que supera esa validación.
+            ==================================================
+            -->
+
+            <p>
+
+                <label for="correo">
+                    Correo Electrónico (Obligatorio):
+                </label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    autocomplete="email"
+                    required>
+
+            </p>
+
+        </fieldset>
+
+
+        <!--
+        ==================================================
+        14. SEGUNDO FIELDSET: TU CONSULTA
+        ==================================================
+
+        Creamos otro grupo de controles.
+
+        Este grupo contiene:
+
+        - Motivo de la consulta.
+        - Mensaje.
+        - Casilla para solicitar una copia.
+
+        LEGEND proporciona el nombre del grupo.
+
+        Esta separación mejora la organización
+        y comprensión del formulario.
+        ==================================================
+        -->
+
+        <fieldset>
+
+            <legend>
+                Tu consulta
+            </legend>
+
+
+            <!--
+            ==================================================
+            15. SELECT: LISTA DE OPCIONES
+            ==================================================
+
+            SELECT crea un control que permite
+            elegir entre diferentes opciones.
+
+            En este caso representa
+            el motivo de la consulta.
+
+            ID="asunto":
+
+            Identificador único.
+
+            NAME="asunto":
+
+            Nombre del dato enviado.
+
+            REQUIRED:
+
+            Obliga a seleccionar una opción válida.
+
+            OPTION:
+
+            Representa una opción individual.
+
+            ATRIBUTO VALUE:
+
+            Es el valor que se enviará
+            cuando el usuario seleccione la opción.
+
+            DIFERENCIA ENTRE VALUE Y TEXTO:
+
+            VALUE:
+                Valor utilizado durante el envío.
+
+            TEXTO:
+                Lo que ve el usuario.
+
+            EJEMPLO:
+
+            <option value="productos">
+                Consulta sobre disponibilidad
+            </option>
+
+            Texto visible:
+                Consulta sobre disponibilidad.
+
+            Valor enviado:
+                productos.
+
+            PRIMERA OPCIÓN:
+
+            value=""
+
+            Representa una selección inicial vacía.
+
+            Como el SELECT tiene REQUIRED,
+            el usuario deberá elegir otra opción
+            para completar el formulario.
+
+            PRUEBA:
+
+            1. Dejar seleccionada la primera opción.
+            2. Intentar enviar.
+            3. Seleccionar una opción válida.
+            4. Comprobar la diferencia.
+            ==================================================
+            -->
+
+            <p>
+
+                <label for="asunto">
+                    Motivo:
+                </label>
+
+                <select
+                    id="asunto"
+                    name="asunto"
+                    required>
+
+                    <option value="">
+                        Selecciona una opción
+                    </option>
+
+                    <option value="productos">
+                        Consulta sobre disponibilidad
+                    </option>
+
+                    <option value="otros">
+                        Otras consultas
+                    </option>
+
+                </select>
+
+            </p>
+
+
+            <!--
+            ==================================================
+            16. TEXTAREA: TEXTO MULTILÍNEA
+            ==================================================
+
+            TEXTAREA permite introducir texto
+            en varias líneas.
+
+            Es apropiado para:
+
+            - Mensajes.
+            - Observaciones.
+            - Comentarios.
+            - Consultas largas.
+
+            DIFERENCIA ENTRE INPUT Y TEXTAREA:
+
+            INPUT TYPE="TEXT":
+                Texto de una línea.
+
+            TEXTAREA:
+                Texto de varias líneas.
+
+            ATRIBUTOS:
+
+            ID="mensaje":
+                Identificador único.
+
+            NAME="mensaje":
+                Nombre del dato enviado.
+
+            ROWS="5":
+                Número inicial de filas visibles.
+
+            COLS="40":
+                Anchura aproximada en columnas
+                de caracteres.
+
+            REQUIRED:
+                Indica que el mensaje es obligatorio.
+
+            IMPORTANTE:
+
+            ROWS y COLS no limitan la cantidad
+            máxima de texto introducido.
+
+            Para establecer una longitud mínima
+            podríamos añadir:
+
+            minlength="10"
+
+            Para establecer una longitud máxima:
+
+            maxlength="500"
+
+            En tu código original únicamente
+            utilizamos REQUIRED.
+
+            PRUEBA:
+
+            1. Dejar el mensaje vacío.
+            2. Intentar enviar.
+            3. Escribir varias líneas.
+            4. Comprobar que admite saltos de línea.
+            ==================================================
+            -->
+
+            <p>
+
+                <label for="mensaje">
+                    Mensaje (obligatorio)
+                </label>
+
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    cols="40"
+                    required></textarea>
+
+            </p>
+
+
+            <!--
+            ==================================================
+            17. INPUT TYPE="CHECKBOX"
+            ==================================================
+
+            CHECKBOX representa una casilla
+            de verificación.
+
+            Permite activar o desactivar
+            una opción de forma independiente.
+
+            En este caso:
+
+            "Enviar copia por correo"
+
+            ATRIBUTOS:
+
+            TYPE="CHECKBOX":
+                Crea una casilla de verificación.
+
+            ID="respuesta":
+                Identificador único.
+
+            NAME="respuesta":
+                Nombre del dato enviado.
+
+            VALUE="si":
+                Valor que se enviará si la casilla
+                está seleccionada.
+
+            IMPORTANTE:
+
+            Si una casilla no está seleccionada,
+            normalmente no se incluye su nombre
+            en los datos enviados.
+
+            Si está seleccionada, se enviará:
+
+            respuesta=si
+
+            DIFERENCIA ENTRE CHECKBOX Y RADIO:
+
+            CHECKBOX:
+                Permite selecciones independientes.
+
+            RADIO:
+                Permite seleccionar una opción
+                dentro de un grupo de alternativas.
+
+            LABEL:
+
+            Asociamos el texto con la casilla
+            mediante FOR e ID.
+
+            PRUEBA:
+
+            1. Pulsar directamente sobre el texto.
+            2. Comprobar que la casilla cambia.
+            3. Utilizar Tab para enfocarla.
+            4. Pulsar Espacio para marcarla.
+            ==================================================
+            -->
+
+            <input
+                type="checkbox"
+                id="respuesta"
+                name="respuesta"
+                value="si">
+
+            <label for="respuesta">
+                Enviar copia por correo
+            </label>
+
+        </fieldset>
+
+
+        <!--
+        ==================================================
+        18. BUTTON TYPE="SUBMIT"
+        ==================================================
+
+        BUTTON representa un botón interactivo.
+
+        TYPE="SUBMIT":
+
+        Indica que el botón intenta enviar
+        el formulario.
+
+        Antes del envío normal, el navegador
+        suele ejecutar la validación HTML.
+
+        En nuestro caso comprobará:
+
+        - Que nombre no esté vacío.
+        - Que nombre cumpla MINLENGTH.
+        - Que correo tenga formato válido.
+        - Que se haya seleccionado un asunto.
+        - Que el mensaje no esté vacío.
+
+        Si algún campo no cumple las restricciones,
+        el navegador puede impedir el envío
+        y mostrar un mensaje de validación.
+
+        Si todos los campos son válidos,
+        el navegador realizará el envío GET.
+
+        IMPORTANTE:
+
+        Este botón no guarda automáticamente
+        información en una base de datos.
+
+        Para procesar la información necesitaríamos
+        un servidor con lógica de aplicación.
+
+        PRUEBA:
+
+        1. Pulsar el botón con campos vacíos.
+        2. Observar los errores.
+        3. Completar correctamente el formulario.
+        4. Pulsar de nuevo.
+        5. Revisar la URL del navegador.
+        ==================================================
+        -->
+
+        <button type="submit">
+            Enviar consulta
+        </button>
+
+    </form>
+
+</section>
+
+
+<!--
+==========================================================
+19. CIERRE DE MAIN
+==========================================================
+
+Esta etiqueta cierra el contenido principal
+del documento.
+
+MAIN representa el contenido principal
+específico de la página.
+
+No debemos confundir:
+
+BODY:
+    Contiene el contenido del documento.
+
+MAIN:
+    Identifica la región principal de ese contenido.
+
+El HEADER y el FOOTER generales
+pueden estar fuera de MAIN.
+
+IMPORTANTE:
+
+Este fragmento presupone que la etiqueta <main>
+se abrió anteriormente en el documento.
+
+Si copiamos únicamente este código
+a un archivo HTML independiente,
+deberíamos incluir también la apertura de MAIN
+y la estructura general del documento.
+==========================================================
+-->
+
+</main>
+
 
 
     <!--

@@ -412,243 +412,7 @@
         ======================================================
     -->
 
-    <header id="inicio">
-
-
-        <!--
-            H1: ENCABEZADO PRINCIPAL
-
-            H1 representa un encabezado de nivel 1.
-
-            HTML dispone de seis niveles:
-
-            h1, h2, h3, h4, h5 y h6.
-
-            Estos niveles permiten organizar
-            jerárquicamente el contenido.
-
-            En nuestro proyecto:
-
-            H1:
-            Nombre principal del negocio.
-
-            H2:
-            Secciones principales de la página.
-
-            H3:
-            Categorías dentro de una sección.
-
-            IMPORTANTE:
-
-            Los encabezados no deben utilizarse
-            simplemente para cambiar el tamaño del texto.
-
-            Su función es indicar la estructura.
-
-            ACCESIBILIDAD:
-
-            Los lectores de pantalla permiten
-            recorrer los encabezados.
-
-            Con Narrador, en modo de exploración,
-            podemos utilizar H para avanzar entre ellos.
-
-            También podemos utilizar 1 para buscar
-            encabezados de nivel 1.
-        -->
-
-        <h1>Kiosko Benancio</h1>
-
-
-        <!--
-            P: PÁRRAFO
-
-            Representa un párrafo de texto.
-
-            En este caso contiene una descripción
-            breve del negocio.
-
-            Los navegadores suelen mostrar
-            los párrafos separados mediante márgenes.
-
-            Sin embargo, esa apariencia visual
-            no es su función semántica.
-
-            No debemos utilizar p únicamente
-            para crear espacios entre elementos.
-        -->
-
-        <p>Tu kiosko de confianza</p>
-
-
-        <!--
-            ==================================================
-            NAV: REGIÓN DE NAVEGACIÓN
-            ==================================================
-
-            NAV representa una zona destinada a contener
-            enlaces importantes de navegación.
-
-            En este proyecto contiene el menú principal.
-
-            ¿QUÉ APORTA LA ETIQUETA NAV?
-
-            Permite identificar esta región como navegación.
-
-            Los lectores de pantalla pueden reconocerla
-            y facilitar el desplazamiento hasta ella.
-
-            Esto es más descriptivo que utilizar
-            un div genérico.
-
-            ATRIBUTO aria-label:
-
-            aria-label="Navegación principal"
-
-            ARIA significa:
-
-            Accessible Rich Internet Applications.
-
-            Este atributo proporciona un nombre accesible
-            directamente a la región de navegación.
-
-            El lector de pantalla puede identificarla
-            como "Navegación principal".
-
-            ¿POR QUÉ ES ÚTIL?
-
-            Una página puede tener varias zonas NAV.
-
-            Por ejemplo:
-
-            - Navegación principal.
-            - Navegación secundaria.
-            - Navegación del pie de página.
-
-            Mediante aria-label podemos diferenciarlas.
-
-            IMPORTANTE:
-
-            NAV ya proporciona semántica de navegación.
-
-            No es necesario añadir role="navigation".
-
-            Debemos utilizar primero las etiquetas
-            HTML nativas y recurrir a ARIA cuando
-            necesitemos información adicional.
-            ==================================================
-        -->
-
-        <nav aria-label="Navegación principal">
-
-
-            <!--
-                UL: LISTA NO ORDENADA
-
-                UL significa unordered list.
-
-                Representa una lista cuyos elementos
-                no necesitan un orden numérico.
-
-                En este caso agrupa los enlaces del menú.
-
-                ¿POR QUÉ UTILIZAMOS UNA LISTA?
-
-                Porque el menú es una colección
-                de opciones relacionadas.
-
-                Los lectores de pantalla pueden
-                identificar la lista y sus elementos.
-
-                LI:
-
-                Cada etiqueta li representa
-                un elemento de la lista.
-
-                A:
-
-                Dentro de cada li colocamos
-                un enlace de navegación.
-
-                Los enlaces utilizan href con #,
-                por lo que apuntan a secciones
-                de este mismo documento.
-            -->
-
-            <ul>
-
-                <!--
-                    href="#quienes-somos"
-
-                    Apunta al elemento que tenga:
-
-                    id="quienes-somos"
-
-                    Cuando pulsemos el enlace,
-                    el navegador localizará esa sección.
-                -->
-
-                <li>
-                    <a href="#quienes-somos">
-                        Quiénes somos
-                    </a>
-                </li>
-
-
-                <!--
-                    Este enlace apunta a la sección
-                    identificada mediante id="productos".
-                -->
-
-                <li>
-                    <a href="#productos">
-                        Productos
-                    </a>
-                </li>
-
-
-                <!--
-                    Este enlace apunta a la sección
-                    identificada mediante id="horarios".
-
-                    En este archivo todavía no existe
-                    esa sección.
-
-                    Por tanto, el enlace no encontrará
-                    actualmente su destino.
-
-                    Más adelante podremos incorporar
-                    la sección de horarios.
-                -->
-
-                <li>
-                    <a href="#horarios">
-                        Horarios
-                    </a>
-                </li>
-
-
-                <!--
-                    Este enlace apunta a id="contacto".
-
-                    En la versión actual todavía no
-                    hemos creado esa sección.
-
-                    El enlace queda preparado para
-                    continuar desarrollando la página.
-                -->
-
-                <li>
-                    <a href="#contacto">
-                        Contacto
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
+    
 
 
     <!--
@@ -2661,6 +2425,9 @@ el nombre accesible "Contacto con nosotros".
         <button type="submit">
             Enviar consulta
         </button>
+        <button type ="reset">
+            Limpiar
+        </button>
 
     </form>
 
@@ -2729,6 +2496,10 @@ y la estructura general del documento.
         ======================================================
     -->
 
+    <footer>
+        <p><small>2026 Kiosko Benancio. Todos los derechos reservados</small></p>
+        <p><a href="#inicio">Volver al inicio</a></p>
+    </footer>
 </body>
 
 <!--

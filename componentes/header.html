@@ -1,242 +1,491 @@
+
 <!DOCTYPE html>
-<html lang="en">
+
+<!--
+============================================================
+ARCHIVO: componentes/header.html
+PROYECTO: KIOSKO BENANCIO
+============================================================
+
+Este documento contiene la cabecera y el menú de navegación.
+
+Se mostrará dentro del archivo index.html mediante un iframe.
+
+ESTRUCTURA DEL PROYECTO:
+
+KioskoBenancio/
+│
+├── index.html
+│
+└── componentes/
+    └── header.html
+
+IMPORTANTE:
+
+Un iframe permite mostrar un documento HTML dentro de otro.
+
+Sin embargo, ambos documentos son independientes.
+
+Por tanto:
+
+- index.html tiene su propio DOM.
+- header.html tiene su propio DOM.
+- Los enlaces del iframe se abren dentro de él por defecto.
+
+Para conseguir que los enlaces naveguen por la página
+principal utilizaremos target="_top".
+
+============================================================
+-->
+
+<html lang="es">
+
+<!--
+============================================================
+1. HEAD: INFORMACIÓN DEL DOCUMENTO
+============================================================
+
+HEAD contiene los metadatos del documento.
+
+No debemos confundir:
+
+HEAD:
+    Contiene información técnica y metadatos.
+
+HEADER:
+    Representa la cabecera semántica del contenido.
+
+El atributo lang="es" del elemento HTML indica que
+el idioma principal del documento es español.
+
+Esto ayuda a los lectores de pantalla a utilizar
+las reglas de pronunciación adecuadas.
+============================================================
+-->
+
 <head>
+
+    <!--
+    Establecemos UTF-8 como codificación.
+
+    Permite representar correctamente tildes,
+    eñes y otros caracteres.
+    -->
+
     <meta charset="UTF-8">
-    <title>Cabecera</title>
+
+    <!--
+    TITLE identifica el documento.
+
+    Si abrimos header.html directamente, este título
+    aparecerá normalmente en la pestaña del navegador.
+
+    Si se carga dentro de un iframe, no sustituirá
+    al título del documento principal.
+    -->
+
+    <title>Cabecera - Kiosko Benancio</title>
+
 </head>
+
+<!--
+============================================================
+2. BODY: CONTENIDO VISIBLE
+============================================================
+
+BODY contiene el contenido del documento.
+
+En este caso incluye:
+
+- HEADER: cabecera semántica.
+- H1: encabezado principal.
+- P: descripción del negocio.
+- NAV: región de navegación.
+- UL: lista no ordenada.
+- LI: elementos de la lista.
+- A: enlaces de navegación.
+============================================================
+-->
+
 <body>
 
+    <!--
+    ========================================================
+    3. HEADER: CABECERA SEMÁNTICA
+    ========================================================
 
-<header id="inicio">
+    HEADER representa contenido introductorio.
 
+    En nuestro caso contiene:
+
+    1. El nombre del kiosko.
+    2. Una breve descripción.
+    3. El menú de navegación principal.
+
+    HEADER es una etiqueta semántica.
+
+    A diferencia de DIV, proporciona información
+    sobre la función del contenido.
+
+    IMPORTANTE:
+
+    Este HEADER pertenece al documento header.html.
+
+    Aunque aparezca visualmente dentro de index.html,
+    no pasa a formar parte de su DOM.
+
+    ========================================================
+    -->
+
+    <header>
 
         <!--
-            H1: ENCABEZADO PRINCIPAL
+        ====================================================
+        4. H1: ENCABEZADO PRINCIPAL
+        ====================================================
 
-            H1 representa un encabezado de nivel 1.
+        H1 representa un encabezado de nivel 1.
 
-            HTML dispone de seis niveles:
+        En este caso identifica el nombre del negocio.
 
-            h1, h2, h3, h4, h5 y h6.
+        Los encabezados HTML permiten organizar
+        jerárquicamente el contenido.
 
-            Estos niveles permiten organizar
-            jerárquicamente el contenido.
+        Los lectores de pantalla pueden utilizarlos
+        como puntos de navegación.
 
-            En nuestro proyecto:
-
-            H1:
-            Nombre principal del negocio.
-
-            H2:
-            Secciones principales de la página.
-
-            H3:
-            Categorías dentro de una sección.
-
-            IMPORTANTE:
-
-            Los encabezados no deben utilizarse
-            simplemente para cambiar el tamaño del texto.
-
-            Su función es indicar la estructura.
-
-            ACCESIBILIDAD:
-
-            Los lectores de pantalla permiten
-            recorrer los encabezados.
-
-            Con Narrador, en modo de exploración,
-            podemos utilizar H para avanzar entre ellos.
-
-            También podemos utilizar 1 para buscar
-            encabezados de nivel 1.
+        No debemos elegir H1 únicamente porque
+        queramos mostrar un texto grande.
+        ====================================================
         -->
 
         <h1>Kiosko Benancio</h1>
 
-
         <!--
-            P: PÁRRAFO
+        ====================================================
+        5. P: PÁRRAFO
+        ====================================================
 
-            Representa un párrafo de texto.
+        P representa un párrafo de texto.
 
-            En este caso contiene una descripción
-            breve del negocio.
+        Aquí contiene una descripción introductoria
+        del negocio.
 
-            Los navegadores suelen mostrar
-            los párrafos separados mediante márgenes.
-
-            Sin embargo, esa apariencia visual
-            no es su función semántica.
-
-            No debemos utilizar p únicamente
-            para crear espacios entre elementos.
+        Su función es estructural y semántica,
+        no simplemente añadir separación visual.
+        ====================================================
         -->
 
-        <p>Tu kiosko de confianza</p>
-
+        <p>Tu kiosco de confianza</p>
 
         <!--
-            ==================================================
-            NAV: REGIÓN DE NAVEGACIÓN
-            ==================================================
+        ====================================================
+        6. NAV: REGIÓN DE NAVEGACIÓN
+        ====================================================
 
-            NAV representa una zona destinada a contener
-            enlaces importantes de navegación.
+        NAV representa una región que contiene enlaces
+        importantes de navegación.
 
-            En este proyecto contiene el menú principal.
+        En nuestro ejemplo permite acceder a:
 
-            ¿QUÉ APORTA LA ETIQUETA NAV?
+        - Quiénes somos.
+        - Productos.
+        - Horarios.
+        - Contacto.
 
-            Permite identificar esta región como navegación.
+        ATRIBUTO ARIA-LABEL:
 
-            Los lectores de pantalla pueden reconocerla
-            y facilitar el desplazamiento hasta ella.
+        aria-label="Navegación principal"
 
-            Esto es más descriptivo que utilizar
-            un div genérico.
+        Proporciona un nombre accesible a la región.
 
-            ATRIBUTO aria-label:
+        Un lector de pantalla puede identificarla como
+        "Navegación principal".
 
-            aria-label="Navegación principal"
+        Esto resulta útil cuando existen varias regiones
+        de navegación dentro de una página.
 
-            ARIA significa:
+        Por ejemplo:
 
-            Accessible Rich Internet Applications.
+        - Navegación principal.
+        - Navegación secundaria.
+        - Navegación del pie de página.
 
-            Este atributo proporciona un nombre accesible
-            directamente a la región de navegación.
+        NAV ya proporciona semántica de navegación.
 
-            El lector de pantalla puede identificarla
-            como "Navegación principal".
+        Por tanto, no necesitamos añadir
+        role="navigation".
 
-            ¿POR QUÉ ES ÚTIL?
-
-            Una página puede tener varias zonas NAV.
-
-            Por ejemplo:
-
-            - Navegación principal.
-            - Navegación secundaria.
-            - Navegación del pie de página.
-
-            Mediante aria-label podemos diferenciarlas.
-
-            IMPORTANTE:
-
-            NAV ya proporciona semántica de navegación.
-
-            No es necesario añadir role="navigation".
-
-            Debemos utilizar primero las etiquetas
-            HTML nativas y recurrir a ARIA cuando
-            necesitemos información adicional.
-            ==================================================
+        ====================================================
         -->
 
         <nav aria-label="Navegación principal">
 
-
             <!--
-                UL: LISTA NO ORDENADA
+            =================================================
+            7. UL: LISTA NO ORDENADA
+            =================================================
 
-                UL significa unordered list.
+            UL significa Unordered List.
 
-                Representa una lista cuyos elementos
-                no necesitan un orden numérico.
+            Representa una lista cuyos elementos
+            no necesitan estar numerados.
 
-                En este caso agrupa los enlaces del menú.
+            Utilizamos una lista porque el menú
+            está formado por varias opciones relacionadas.
 
-                ¿POR QUÉ UTILIZAMOS UNA LISTA?
+            Los lectores de pantalla pueden comunicar
+            la existencia de la lista y sus elementos.
 
-                Porque el menú es una colección
-                de opciones relacionadas.
-
-                Los lectores de pantalla pueden
-                identificar la lista y sus elementos.
-
-                LI:
-
-                Cada etiqueta li representa
-                un elemento de la lista.
-
-                A:
-
-                Dentro de cada li colocamos
-                un enlace de navegación.
-
-                Los enlaces utilizan href con #,
-                por lo que apuntan a secciones
-                de este mismo documento.
+            Dentro de UL colocaremos elementos LI.
+            =================================================
             -->
 
             <ul>
 
                 <!--
-                    href="#quienes-somos"
+                ================================================
+                8. PRIMER ENLACE: QUIÉNES SOMOS
+                ================================================
 
-                    Apunta al elemento que tenga:
+                LI representa un elemento de lista.
 
-                    id="quienes-somos"
+                Dentro colocamos una etiqueta A.
 
-                    Cuando pulsemos el enlace,
-                    el navegador localizará esa sección.
+                A representa un hipervínculo.
+
+                ATRIBUTO HREF:
+
+                href="../index.html#quienes-somos"
+
+                Vamos a dividir esta ruta:
+
+                ../
+                    Sube un nivel desde la carpeta
+                    componentes.
+
+                index.html
+                    Identifica el archivo principal.
+
+                #quienes-somos
+                    Identifica un fragmento del documento.
+
+                El navegador buscará en index.html
+                un elemento que tenga:
+
+                id="quienes-somos"
+
+                Por ejemplo:
+
+                <section id="quienes-somos">
+
+                ================================================
+                9. ATRIBUTO TARGET="_TOP"
+                ================================================
+
+                Este atributo es especialmente importante
+                porque header.html se carga en un iframe.
+
+                Por defecto, los enlaces se abren
+                en el mismo contexto de navegación.
+
+                Si no utilizásemos target="_top",
+                el navegador podría cargar index.html
+                dentro del propio iframe.
+
+                Esto provocaría que toda la página
+                apareciese dentro del pequeño marco
+                reservado para la cabecera.
+
+                Con:
+
+                target="_top"
+
+                Indicamos que el destino debe abrirse
+                en el contexto de navegación superior.
+
+                En nuestro proyecto ese contexto
+                corresponde a la página principal.
+
+                IMPORTANTE:
+
+                target debe ser un atributo independiente.
+
+                CORRECTO:
+
+                href="../index.html#quienes-somos"
+                target="_top"
+
+                INCORRECTO:
+
+                href="../index.html#quienes-somos target='_top'"
+
+                El atributo TARGET no es un atributo ARIA.
+
+                Controla dónde se realiza la navegación.
+
+                En iframes con restricciones sandbox,
+                la navegación superior puede estar bloqueada.
+                ================================================
                 -->
 
                 <li>
-                    <a href="#quienes-somos">
+
+                    <a href="../index.html#quienes-somos"
+                       target="_top">
                         Quiénes somos
                     </a>
+
                 </li>
 
-
                 <!--
-                    Este enlace apunta a la sección
-                    identificada mediante id="productos".
+                ================================================
+                10. SEGUNDO ENLACE: PRODUCTOS
+                ================================================
+
+                Este enlace permite acceder a la sección
+                de productos del documento principal.
+
+                HREF:
+
+                ../index.html#productos
+
+                ../
+                    Sube desde componentes a la raíz.
+
+                index.html
+                    Identifica la página principal.
+
+                #productos
+                    Busca el elemento con id="productos".
+
+                En index.html tenemos:
+
+                <section id="productos">
+
+                TARGET:
+
+                target="_top"
+
+                Permite que la navegación se realice
+                en la página superior y no en el iframe.
+
+                IMPORTANTE:
+
+                El valor de href termina después
+                de #productos y su comilla de cierre.
+
+                TARGET se escribe fuera de href,
+                como otro atributo del enlace.
+                ================================================
                 -->
 
                 <li>
-                    <a href="#productos">
+
+                    <a href="../index.html#productos"
+                       target="_top">
                         Productos
                     </a>
+
                 </li>
 
-
                 <!--
-                    Este enlace apunta a la sección
-                    identificada mediante id="horarios".
+                ================================================
+                11. TERCER ENLACE: HORARIOS
+                ================================================
 
-                    En este archivo todavía no existe
-                    esa sección.
+                Este enlace apunta a la sección de horarios.
 
-                    Por tanto, el enlace no encontrará
-                    actualmente su destino.
+                HREF:
 
-                    Más adelante podremos incorporar
-                    la sección de horarios.
+                ../index.html#horarios
+
+                El fragmento #horarios corresponde
+                al identificador:
+
+                id="horarios"
+
+                En el documento principal tenemos:
+
+                <section id="horarios"
+                         aria-labelledby="titulo-horarios">
+
+                El navegador localizará esta sección
+                utilizando su atributo ID.
+
+                No debemos confundir:
+
+                id="horarios"
+                    Identifica el elemento y permite
+                    acceder mediante un enlace.
+
+                aria-labelledby="titulo-horarios"
+                    Relaciona la sección con el elemento
+                    que proporciona su nombre accesible.
+
+                TARGET="_TOP":
+
+                Solicita que la navegación se realice
+                en el contexto superior.
+
+                No abre una pestaña nueva.
+                ================================================
                 -->
 
                 <li>
-                    <a href="#horarios">
+
+                    <a href="../index.html#horarios"
+                       target="_top">
                         Horarios
                     </a>
+
                 </li>
 
-
                 <!--
-                    Este enlace apunta a id="contacto".
+                ================================================
+                12. CUARTO ENLACE: CONTACTO
+                ================================================
 
-                    En la versión actual todavía no
-                    hemos creado esa sección.
+                Este enlace permite acceder a la sección
+                de contacto del documento principal.
 
-                    El enlace queda preparado para
-                    continuar desarrollando la página.
+                HREF:
+
+                ../index.html#contacto
+
+                El navegador buscará:
+
+                id="contacto"
+
+                En index.html tenemos:
+
+                <section id="contacto"
+                         aria-labelledby="titulo-contacto">
+
+                TARGET="_TOP":
+
+                Indica que el enlace debe navegar
+                en la página superior.
+
+                IMPORTANTE:
+
+                Pulsar este enlace no envía el formulario.
+
+                Únicamente navega hasta la sección
+                en la que se encuentra.
+
+                El envío del formulario se realiza
+                mediante su botón de tipo submit.
+                ================================================
                 -->
 
                 <li>
-                    <a href="#contacto">
+
+                    <a href="../index.html#contacto"
+                       target="_top">
                         Contacto
                     </a>
+
                 </li>
 
             </ul>
@@ -244,6 +493,7 @@
         </nav>
 
     </header>
-        
+
 </body>
+
 </html>
